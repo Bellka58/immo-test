@@ -1,0 +1,92 @@
+.burger-cross {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+
+  * {
+    transition: 0.25s ease-in-out;
+  }
+
+  span {
+    display: block;
+    background: #6588de;
+    border-radius: 1px;
+  }
+
+  &__burger {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__burger-line {
+    width: 60%;
+    height: 3px;
+    position: relative;
+    margin: 10% 0;
+    &:nth-child(1) {
+      transition-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.625s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.75s;
+    }
+
+    &.active {
+      width: 0%;
+      &:nth-child(1) {
+        transition-delay: 0s;
+      }
+      &:nth-child(2) {
+        transition-delay: 0.125s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.25s;
+      }
+    }
+  }
+  &__cross {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(45deg);
+  }
+
+  &__cross-line {
+    &:nth-child(1) {
+      height: 0%;
+      width: 3px;
+      position: absolute;
+      top: 10%;
+      left: 48%;
+      transition-delay: 0s;
+    }
+    &:nth-child(2) {
+      width: 0%;
+      height: 3px;
+      position: absolute;
+      left: 10%;
+      top: 48%;
+      transition-delay: 0.25s;
+    }
+    &.active {
+      &:nth-child(1) {
+        height: 80%;
+        transition-delay: 0.625s;
+      }
+      &:nth-child(2) {
+        width: 80%;
+        transition-delay: 0.375s;
+      }
+    }
+  }
+}
